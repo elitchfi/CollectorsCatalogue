@@ -18,22 +18,23 @@
 
   <div class="field">
     <%= form.label :condition %>
-    <%= form.number_field :condition %>
+    <%= form.select :condition, [['New',5],['Complete in Box',4],['Boxed',3],['Loose + extras',2],['Loose',1]] %>
   </div>
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%= form.range_field :rating, :min=>1, :max=>5, :step=>1, :class=>"slide", :id=>"rating"%>
   </div>
 
   <div class="field">
     <%= form.label :completion %>
-    <%= form.number_field :completion %>
+    <%= form.range_field :completion, :min=>0, :max=>100, :class=>"slide", :id=>"completion"%>
   </div>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
+  
   </div>
 
   <div class="actions">
